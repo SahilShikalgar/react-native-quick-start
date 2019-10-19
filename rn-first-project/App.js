@@ -1,10 +1,13 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, Text, View, Button } from 'react-native';
 
 export default function App() {
+  const [ outputText, setOutputText ] = useState('Text Before change');
+
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your zapp!</Text>
+      <Text> { outputText } </Text>
+      <Button title="Change Text" onPress={() => setOutputText('Text after change')}></Button>
     </View>
   );
 }
