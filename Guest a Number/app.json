@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Guest a Number",
-    "slug": "guest-a-number",
+    "name": "Guess a Number",
+    "slug": "guess-a-number",
     "privacy": "public",
     "sdkVersion": "35.0.0",
     "platforms": [
