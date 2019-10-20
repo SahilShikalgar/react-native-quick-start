@@ -2,6 +2,8 @@ import React, { useState, useRef, useEffect } from 'react';
 import { View, Text, StyleSheet, Button, Alert } from 'react-native';
 import NumberContainer from '../components/NumberContainer';
 import Card from '../components/Card';
+import MainButton from '../components/MainButton';
+import { Ionicons } from '@expo/vector-icons';
 
 const generateRandomBetween = (min, max, exclude) => {
     min = Math.ceil(min);
@@ -52,8 +54,12 @@ const GameScreen = (props) => {
             <Text>Oppontent's Guest</Text>
             <NumberContainer>{ currentGuess }</NumberContainer>
             <Card style={styles.buttonContainer}>
-                <Button title="LOWER" onPress={nextGuessHandler.bind(this, 'lower')} />
-                <Button title="GREATER" onPress={nextGuessHandler.bind(this, 'greater')} />
+                <MainButton onPress={nextGuessHandler.bind(this, 'lower')}>
+                    <Ionicons name="md-remove" size={24} color="white" />
+                </MainButton>
+                <MainButton onPress={nextGuessHandler.bind(this, 'greater')}>
+                    <Ionicons name="md-add" size={24} color="white" />
+                </MainButton>
             </Card>
         </View>
     );
@@ -69,8 +75,8 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-around',
         marginTop: 20,
-        width: 300,
-        maxWidth: '80%'
+        width: 400,
+        maxWidth: '90%'
     }
 });
 
